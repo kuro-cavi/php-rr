@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  ### PHP #########################################
+  php:
+    build: ./docker/php
+    container_name: "php-rr_php"
+    volumes:
+      - ./app:/var/www/webserver
+    ports:
+      - "8080:8080"
+    command: rr serve
+    tty: true
